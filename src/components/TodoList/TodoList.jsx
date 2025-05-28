@@ -1,10 +1,21 @@
-import Text from '../Text/Text';
+import Grid from '../Grid/Grid.jsx';
+import Todo from '../Todo/Todo.jsx';
+import { useSelector } from 'react-redux';
 
 const TodoList = () => {
+  const todos = useSelector(state => state.todos.items);
+
   return (
-    <>
-      <Text textAlign="center">We did not find any todo😯</Text>
-    </>
+    <Grid>
+      {todos.map(todo => (
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          completed={todo.completed}
+        />
+      ))}
+    </Grid>
   );
 };
 
