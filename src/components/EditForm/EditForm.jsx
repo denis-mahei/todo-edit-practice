@@ -2,6 +2,7 @@ import { RiSaveLine } from 'react-icons/ri';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import style from './EditForm.module.css';
+import { setCurrentTodo } from '../../redux/todoSlice.js';
 
 const EditForm = () => {
   return (
@@ -11,7 +12,7 @@ const EditForm = () => {
         placeholder="What do you want to write?"
         name="text"
         required
-        defaultValue={''}
+        defaultValue={setCurrentTodo.text}
         autoFocus
       />
       <button className={style.submitButton} type="submit">
