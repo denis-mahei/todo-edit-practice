@@ -3,8 +3,11 @@ import { MdOutlineCancel } from 'react-icons/md';
 
 import style from './EditForm.module.css';
 import { setCurrentTodo } from '../../redux/todoSlice.js';
+import { useDispatch } from 'react-redux';
 
 const EditForm = () => {
+  const dispatch = useDispatch();
+
   return (
     <form className={style.form}>
       <input
